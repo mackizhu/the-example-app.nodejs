@@ -13,6 +13,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'ls -al'
+                sh 'npm install'
                 sh 'npm run start:dev'
                 sh 'curl -k http://localhost:3000'
             }
