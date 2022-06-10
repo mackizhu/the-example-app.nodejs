@@ -7,21 +7,20 @@ pipeline {
     }
     environment {
         CI = 'true'
-        NPM_CONFIG_CACHE = "${WORKSPACE}/.npm"
+//         NPM_CONFIG_CACHE = "${WORKSPACE}/.npm"
     }
     stages {
         stage('Build') {
             steps {
                 sh 'ls -al'
                 sh 'npm install'
-                sh 'npm run start:dev'
+//                 sh 'npm run start:dev'
+            }
+        }
+        stage('Test') {
+            steps {
                 sh 'curl -k http://localhost:3000'
             }
         }
-//         stage('Test') {
-//             steps {
-//                 sh './jenkins/scripts/test.sh'
-//             }
-//         }
     }
 }
