@@ -7,13 +7,14 @@ pipeline {
     }
     environment {
         CI = 'true'
-        NPM_CONFIG_CACHE = "${WORKSPACE}/.npm"
+//         NPM_CONFIG_CACHE = "${WORKSPACE}/.npm"
     }
     stages {
         stage('Build') {
             steps {
                 sh 'ls -al'
-                sh 'npm install'
+                sh 'npm run start:dev'
+                sh 'curl -k http://localhost:3000'
             }
         }
 //         stage('Test') {
