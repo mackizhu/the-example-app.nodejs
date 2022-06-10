@@ -12,6 +12,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                sh 'pwd'
                 sh 'ls -al'
                 sh 'npm install'
 //                 sh 'npm run start:dev'
