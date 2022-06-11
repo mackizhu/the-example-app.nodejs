@@ -15,7 +15,7 @@ pipeline {
                 sh 'pwd'
                 sh 'ls -al'
                 sh 'npm install'
-                sh 'npm start'
+                sh 'nohup npm start &'
             }
         }
         stage('Test') {
