@@ -12,6 +12,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                sh 'pwd'
                 sh 'ls -al'
                 sh 'npm install'
                 sh 'npm start'
@@ -22,5 +23,10 @@ pipeline {
                 sh 'curl -k http://localhost:3000'
             }
         }
+//         stage('Test') {
+//             steps {
+//                 sh './jenkins/scripts/test.sh'
+//             }
+//         }
     }
 }
